@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conditional & Looping Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .demo {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      width: 600px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 16px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <h2>Conditional & Looping Demo</h2>
+    <pre id="output"></pre>
+  </div>
+
+  <script>
+    let output = "";
+
+    // 1️⃣ Conditional Statements
+    let number = 15;
+    if (number > 20) {
+      output += "Number is greater than 20\n";
+    } else if (number === 20) {
+      output += "Number is exactly 20\n";
+    } else {
+      output += "Number is less than 20\n";
+    }
+
+    // 2️⃣ For Loop
+    output += "\nFor Loop Example:\n";
+    for (let i = 1; i <= 5; i++) {
+      output += "Iteration " + i + "\n";
+    }
+
+    // 3️⃣ While Loop
+    output += "\nWhile Loop Example:\n";
+    let count = 1;
+    while (count <= 5) {
+      output += "Count is: " + count + "\n";
+      count++;
+    }
+
+    // 4️⃣ Do...While Loop
+    output += "\nDo...While Loop Example:\n";
+    let x = 1;
+    do {
+      output += "x is: " + x + "\n";
+      x++;
+    } while (x <= 5);
+
+    // 5️⃣ Switch Statement
+    output += "\nSwitch Statement Example:\n";
+    let day = 3; // Example: 3 means Wednesday
+    switch (day) {
+      case 1: output += "Monday\n"; break;
+      case 2: output += "Tuesday\n"; break;
+      case 3: output += "Wednesday\n"; break;
+      case 4: output += "Thursday\n"; break;
+      case 5: output += "Friday\n"; break;
+      case 6: output += "Saturday\n"; break;
+      case 7: output += "Sunday\n"; break;
+      default: output += "Invalid day number\n";
+    }
+
+    // Display results on webpage
+    document.getElementById("output").textContent = output;
+  </script>
+</body>
+</html>

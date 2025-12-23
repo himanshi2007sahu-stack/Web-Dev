@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aurora Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Aurora-style animated gradient background */
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      background-size: 400% 400%;
+      animation: aurora 12s ease infinite;
+    }
+
+    @keyframes aurora {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .calculator {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 420px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 160px;
+      padding: 12px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      margin: 8px;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>✨ Aurora Calculator ✨</h2>
+    <input type="number" id="num1" placeholder="First number">
+    <input type="number" id="num2" placeholder="Second number"><br>
+
+    <button onclick="calculate('add')">➕ Add</button>
+    <button onclick="calculate('subtract')">➖ Subtract</button>
+    <button onclick="calculate('multiply')">✖ Multiply</button>
+    <button onclick="calculate('divide')">➗ Divide</button>
+    <button onclick="calculate('modulus')">% Modulus</button>
+
+    <div id="result">Result will appear here</div>
+  </div>
+
+  <script>
+    function calculate(operation) {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let result;
+
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "⚠️ Please enter valid numbers!";
+      } else {
+        switch(operation) {
+          case 'add':
+            result = num1 + num2;
+            break;
+          case 'subtract':
+            result = num1 - num2;
+            break;
+          case 'multiply':
+            result = num1 * num2;
+            break;
+          case 'divide':
+            result = num2 !== 0 ? (num1 / num2) : "❌ Cannot divide by zero!";
+            break;
+          case 'modulus':
+            result = num2 !== 0 ? (num1 % num2) : "❌ Cannot modulus by zero!";
+            break;
+        }
+      }
+      document.getElementById("result").innerHTML = "Result: " + result;
+    }
+  </script>
+</body>
+</html>

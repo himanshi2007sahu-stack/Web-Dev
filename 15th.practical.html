@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #content {
+      margin-top: 20px;
+      color: darkblue;
+      font-weight: bold;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Original Title</h1>
+  <p class="description">This is the first description.</p>
+  <div id="content">Initial content area</div>
+
+  <button onclick="manipulateDOM()">Click to Manipulate DOM</button>
+
+  <script>
+    function manipulateDOM() {
+      // 1️⃣ Using getElementById()
+      var heading = document.getElementById("title");
+      heading.innerHTML = "Updated Title using getElementById()";
+
+      // 2️⃣ Using querySelector() for a class
+      var para = document.querySelector(".description");
+      para.innerHTML = "Changed text using querySelector()";
+
+      // 3️⃣ Using querySelector() for an ID
+      var contentDiv = document.querySelector("#content");
+      contentDiv.innerHTML = "<strong>New content added with innerHTML!</strong>";
+    }
+  </script>
+</body>
+</html>

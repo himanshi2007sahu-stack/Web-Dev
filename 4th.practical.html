@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JEE Registration Form</title>
+</head>
+<body>
+
+    <h1 align="center"><u>JEE Registration Form</u></h1>
+
+    <form action="#" method="post" align="center" enctype="multipart/form-data">
+
+        <table border="1" align="center" cellpadding="8" cellspacing="0">
+            <caption><b><i>Joint Entrance Examination Registration</i></b></caption><br>
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" name="fullname" placeholder="Enter your full name" required></td>
+            </tr>
+            <tr>
+                <td>Father's Name:</td>
+                <td><input type="text" name="fathername" placeholder="Enter father's name" required></td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date" name="dob" required></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </td>
+            </tr>
+            <tr>
+                <td>Contact Number:</td>
+                <td><input type="text" name="contact" maxlength="10" placeholder="Enter 10-digit number" required></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" placeholder="Enter your email" required></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea name="address" rows="3" cols="25" placeholder="Enter your address" required></textarea></td>
+            </tr>
+            <tr>
+                <td>JEE Roll Number:</td>
+                <td><input type="text" name="jee_roll" placeholder="Enter your JEE roll number" required></td>
+            </tr>
+            <tr>
+                <td>JEE Application Number:</td>
+                <td><input type="text" name="jee_app" placeholder="Enter your application number" required></td>
+            </tr>
+            <tr>
+                <td>Exam Center Preference:</td>
+                <td>
+                    <select name="center">
+                        <option value="">--Select Center--</option>
+                        <option>Delhi</option>
+                        <option>Mumbai</option>
+                        <option>Kolkata</option>
+                        <option>Chennai</option>
+                        <option>Bangalore</option>
+                        <option>Raipur</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Category:</td>
+                <td>
+                    <select name="category">
+                        <option value="">--Select Category--</option>
+                        <option>General</option>
+                        <option>OBC</option>
+                        <option>SC</option>
+                        <option>ST</option>
+                        <option>EWS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>12th Board Name:</td>
+                <td><input type="text" name="board" placeholder="e.g., CBSE, ICSE, State Board" required></td>
+            </tr>
+            <tr>
+                <td>Year of Passing:</td>
+                <td><input type="number" name="year" min="2020" max="2025" required></td>
+            </tr>
+            <tr>
+                <td>Subjects Studied:</td>
+                <td>
+                    <input type="checkbox" name="subject" value="Physics"> Physics
+                    <input type="checkbox" name="subject" value="Chemistry"> Chemistry
+                    <input type="checkbox" name="subject" value="Mathematics"> Mathematics
+                </td>
+            </tr>
+            <tr>
+                <td>Upload 12th Marksheet:</td>
+                <td><input type="file" name="marksheet" required></td>
+            </tr>
+            <tr>
+                <td>Upload Passport Size Photo:</td>
+                <td><input type="file" name="photo" required></td>
+            </tr>
+            <tr>
+                <td>Upload Signature:</td>
+                <td><input type="file" name="signature" required></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

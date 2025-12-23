@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <form id="myForm" onsubmit="return validateForm()">
+    <h2>Registration Form</h2>
+    
+    <label>Username:</label>
+    <input type="text" id="username" oninput="checkUsername()">
+    <div id="userError" class="error"></div>
+
+    <label>Email:</label>
+    <input type="email" id="email" oninput="checkEmail()">
+    <div id="emailError" class="error"></div>
+
+    <label>Password:</label>
+    <input type="password" id="password" oninput="checkPassword()">
+    <div id="passError" class="error"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Oninput validation
+    function checkUsername() {
+      let username = document.getElementById("username").value;
+      if (username.length < 3) {
+        document.getElementById("userError").textContent = "Username must be at least 3 characters.";
+      } else {
+        document.getElementById("userError").textContent = "";
+      }
+    }
+
+    function checkEmail() {
+      let email = document.getElementById("email").value;
+      if (!email.includes("@")) {
+        document.getElementById("emailError").textContent = "Invalid email format.";
+      } else {
+        document.getElementById("emailError").textContent = "";
+      }
+    }
+
+    function checkPassword() {
+      let password = document.getElementById("password").value;
+      if (password.length < 6) {
+        document.getElementById("passError").textContent = "Password must be at least 6 characters.";
+      } else {
+        document.getElementById("passError").textContent = "";
+      }
+    }
+
+    // Onsubmit validation
+    function validateForm() {
+      let username = document.getElementById("username").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      if (username.length < 3) {
+        alert("❌ Username must be at least 3 characters.");
+        return false;
+      }
+      if (!email.includes("@")) {
+        alert("❌ Please enter a valid email.");
+        return false;
+      }
+      if (password.length < 6) {
+        alert("❌ Password must be at least 6 characters.");
+        return false;
+      }
+
+      alert("✅ Form submitted successfully!");
+      return true;
+    }
+  </script>
+</body>
+</html>
